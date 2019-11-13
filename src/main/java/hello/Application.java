@@ -18,8 +18,7 @@ import javax.jms.JMSException;
 @EnableJms
 public class Application {
   private static final Logger logger = LoggerFactory.getLogger(Application.class);
-  @Autowired
-  private   Producer producer2;
+
   public static void main(String[] args) throws Exception
   {
     //LocalDateTime startTime = LocalDateTime.now();
@@ -31,12 +30,11 @@ public class Application {
   //  LocalDateTime endTime = LocalDateTime.now();
 
     logger.info("Main application end [{}]");
-    new Application().start();
+  //  new Application().start();
   }
   public void start(){
 
-    producer2.sendMessage("planner-test-out","this is sample message planner-test-out");
-    producer2.sendMessage("planner-test","This is sample message on planner-test");
+
 
   }
 //  public void Start() throws  Exception
