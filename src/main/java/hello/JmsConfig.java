@@ -1,6 +1,7 @@
 package hello;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.ActiveMQSslConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
@@ -9,13 +10,14 @@ import org.springframework.jms.core.JmsTemplate;
 @Configuration
 public class JmsConfig {
 
-  String BROKER_URL = "tcp://messaging-qvbrddu62u-openshift-enmasse.e785.tke-2.openshiftapps.com:443";
+  String BROKER_URL = "tcp://messaging-dtli6qnhnk-openshift-enmasse.e785.tke-2.openshiftapps.com:443";
   String BROKER_USERNAME = "appuser";
   String BROKER_PASSWORD = "appuser-test";
 
   @Bean
   public ActiveMQConnectionFactory connectionFactory(){
-    ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory();
+  //  ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory();
+    ActiveMQSslConnectionFactory connectionFactory = new ActiveMQSslConnectionFactory();
     connectionFactory.setBrokerURL(BROKER_URL);
     connectionFactory.setPassword(BROKER_PASSWORD);
     connectionFactory.setUserName(BROKER_USERNAME);
