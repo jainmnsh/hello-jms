@@ -17,16 +17,16 @@ public class Listener {
   @Autowired
   private Producer producer;
 
-  @JmsListener(destination = "jms/planner-queue-test")
+  @JmsListener(destination = "planner-test")
   public void receiveMessage(final Message jsonMessage) throws JMSException {
     String messageData = null;
     System.out.println("Received message " + jsonMessage);
     if(jsonMessage instanceof TextMessage) {
       TextMessage textMessage = (TextMessage)jsonMessage;
       messageData = textMessage.getText();
-      logger.debug("Message receved [{}]",messageData);
+      logger.error("Message receved [{}]",messageData);
     }
-    producer.sendMessage("jms/planner-test-out", messageData);
+  //  producer.sendMessage("jms/planner-test-out", messageData);
   }
 
 }
