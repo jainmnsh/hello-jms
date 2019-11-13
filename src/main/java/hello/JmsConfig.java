@@ -9,9 +9,9 @@ import org.springframework.jms.core.JmsTemplate;
 @Configuration
 public class JmsConfig {
 
-  String BROKER_URL = "tcp://messaging-mb7v1uchdy.openshift-enmasse.svc:5672";
-  String BROKER_USERNAME = "appuser";
-  String BROKER_PASSWORD = "appuser-test";
+  String BROKER_URL = "tcp://10.146.30.69:61616";
+  String BROKER_USERNAME = "admin";
+  String BROKER_PASSWORD = "admin";
 
   @Bean
   public ActiveMQConnectionFactory connectionFactory(){
