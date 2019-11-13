@@ -22,8 +22,8 @@ public class TestRestController {
   public String sayHello(@RequestParam(name="name",required = false, defaultValue="World") String name)
   {
     logger.info("Web Method sayHello" + name);
-    producer2.sendMessage("planner-test-out","this is sample message planner-test-out" + name);
-    producer2.sendMessage("planner-test","This is sample message on planner-test" + name);
+    producer2.sendMessage("planner-test-out","{this is sample message planner-test-out }");
+    producer2.sendMessage("planner-test","{This is sample message on planner-test  }");
     return "greeting";
   }
 
