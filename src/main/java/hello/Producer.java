@@ -22,7 +22,7 @@ public class Producer {
 
   public void sendMessage(final String queueName, final String message) {
     Map map = new Gson().fromJson(message, Map.class);
-    final String textMessage = "Hello" + map.get("name");
+    final String textMessage = "Hello -- " + message;
     System.out.println("Sending message " + textMessage + "to queue - " + queueName);
     jmsTemplate.send(queueName, new MessageCreator() {
 
