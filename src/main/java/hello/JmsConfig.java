@@ -9,7 +9,7 @@ import org.springframework.jms.core.JmsTemplate;
 @Configuration
 public class JmsConfig {
 
-  String BROKER_URL = "tcp://messaging-mb7v1uchdy.openshift-enmasse.svc:5672";
+  String BROKER_URL = "tcp://messaging-qvbrddu62u-openshift-enmasse.e785.tke-2.openshiftapps.com:443";
   String BROKER_USERNAME = "appuser";
   String BROKER_PASSWORD = "appuser-test";
 
