@@ -27,7 +27,7 @@ public class Producer {
     jmsTemplate.send(queueName, new MessageCreator() {
 
       public Message createMessage(Session session) throws JMSException {
-        TextMessage message = session.createTextMessage();
+        TextMessage message = session.createTextMessage(textMessage);
         return message;
       }
     });
