@@ -6,6 +6,7 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jms.annotation.EnableJms;
@@ -17,7 +18,8 @@ import javax.jms.JMSException;
 @EnableJms
 public class Application {
   private static final Logger logger = LoggerFactory.getLogger(Application.class);
-
+  @Autowired
+  private static Producer producer2;
   public static void main(String[] args) throws Exception
   {
     //LocalDateTime startTime = LocalDateTime.now();
@@ -29,6 +31,8 @@ public class Application {
   //  LocalDateTime endTime = LocalDateTime.now();
 
     logger.info("Main application end [{}]");
+    producer2.sendMessage("planner-test-out","this is sample message planner-test-out");
+    producer2.sendMessage("planner-test","This is sample message on planner-test");
 
   }
 //  public void Start() throws  Exception
